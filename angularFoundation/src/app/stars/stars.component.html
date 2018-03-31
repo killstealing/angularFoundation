@@ -1,0 +1,5 @@
+<p>
+  <i *ngFor="let item of ratingArr;index as i;" [ngClass]="item?'fa fa-star-o':'fa fa-star'"
+    (click)="clickStar(i)"></i>
+  <span>{{rating}}星</span>
+</p>

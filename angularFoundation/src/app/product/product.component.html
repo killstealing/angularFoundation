@@ -1,0 +1,19 @@
+<div class="row" style="margin-top:20px;">
+  <div class="col-lg-12" style="margin-bottom:20px;">
+      <input type="text" class="form-control" [formControl]="search">
+  </div>
+  <div class="col-md-4" *ngFor="let product of products | async">
+    <div class="thumbnail">
+      <img src="../../assets/image/img_nature_wide.jpg" alt="" class="form-control">
+      <div class="caption">
+        <h5 class="pull-right">{{product.price}}</h5>
+        <!-- <h5><a [routerLink]="['/productDetail',product.title]">{{product.title}}</a></h5> -->
+        <h5><a [routerLink]="['/productDetail',product.id]">{{product.title}}</a></h5>
+        <p>{{product.desc}}</p>
+      </div>
+      <div>
+        <app-stars [rating]="product.rating"></app-stars>
+      </div>
+    </div>
+  </div>
+</div>
